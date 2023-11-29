@@ -69,7 +69,7 @@ const CartDetails = () => {
     const headers = {
       "Content-Type": "application/json"
     };
-    const response = await fetch("https://vercel.com/gsivabalan/payment-integration-backend/2dRu91kBvscA93eEgWKtMAyAPm8L", {
+    const response = await fetch("https://vercel.com/gsivabalan/payment-integration-backend/2dRu91kBvscA93eEgWKtMAyAPm8L/api/create-checkout-session", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)
