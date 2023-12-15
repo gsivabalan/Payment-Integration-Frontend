@@ -71,7 +71,7 @@ const CartDetails = () => {
     };
   
     try {
-      const response = await fetch("https://vercel.com/gsivabalan/payment-integration-backend/GqmKXPvCnCv5UbATEtsgzZowGwD9", {
+      const response = await fetch("https://payment-integration-backend-gsivabalan.vercel.app/", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body)
