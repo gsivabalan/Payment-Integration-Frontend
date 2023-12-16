@@ -79,7 +79,7 @@ const CartDetails = () => {
       });
   
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        throw new Error(`HTTPS error! Status: ${response.status}`);
       }
   
       const session = await response.json();
