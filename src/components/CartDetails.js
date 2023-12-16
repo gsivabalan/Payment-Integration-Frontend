@@ -71,10 +71,11 @@ const CartDetails = () => {
     };
   
     try {
-      const response = await fetch("http://localhost:7000/api/create-checkout-session", {
+      const response = await fetch("", {  
         method: "POST",
         headers: headers,
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
+        credentials: "include",
       });
   
       if (!response.ok) {
