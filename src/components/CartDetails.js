@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeToCart, removeSingleIteams, emptycartIteam } from '../redux/features/cartSlice';
 import toast from 'react-hot-toast';
 import { loadStripe } from '@stripe/stripe-js';
+import axios from 'axios';
 
 const CartDetails = () => {
   const { carts } = useSelector((state) => state.allCart);
@@ -71,18 +72,16 @@ const CartDetails = () => {
     };
   
     try {
-      const response = await fetch("https://payment-integration-backend.vercel.app/", {  
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(body),
-        credentials: "include",
+      const response = await axios.post("http://localhost:7000/", {  
+        ...body
       });
   
-      if (!response.ok) {
-        throw new Error(`HTTPS error! Status: ${response.status}`);
-      }
+      // f (!response) {
+      //     throw new Error(`HTTPS error! Status: ${response.status}`);
+      //    }
   
-      const session = await response.json();
+         //const session = await response.json();
+        const session = response.data
   
       const result = stripe.redirectToCheckout({
         sessionId: session.id
