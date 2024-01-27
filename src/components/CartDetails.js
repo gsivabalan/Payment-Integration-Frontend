@@ -72,7 +72,7 @@ const CartDetails = () => {
     };
   
     try {
-      const response = await axios.post("http://localhost:7000/", {  
+      const response = await axios.post("https://payment-integration-3ni9.onrender.com/", {  
         ...body
       });
   
